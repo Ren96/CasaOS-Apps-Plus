@@ -1,0 +1,57 @@
+name: Crafty Control
+services:
+  crafty-controller:
+    container_name: craftycontrol
+    environment:
+      - TZ=Etc/UTC
+    image: registry.gitlab.com/crafty-controller/crafty-4:latest
+    labels:
+      icon: 
+    ports:
+      - target: 8000
+        published: "8080"
+        protocol: tcp
+      - target: 8443
+        published: "8443"
+        protocol: tcp
+      - target: 8123
+        published: "8123"
+        protocol: tcp
+      - target: 19132
+        published: "19132"
+        protocol: udp
+      - target: 25500-25600:25500-25600 
+        published: "25500-25600:25500-25600"
+        protocol: tcp
+    privileged: true
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/Crafty/docker/backups
+        target: /crafty/backups
+      - type: bind
+        source: /DATA/AppData/Crafty/docker/logs
+        target: /crafty/logs
+      - type: bind
+        source: /DATA/AppData/Crafty/docker/servers
+        target: /crafty/servers
+      - type: bind
+        source: /DATA/AppData/Crafty/config
+        target: /crafty/app/config
+      - type: bind
+        source: /DATA/AppData/Crafty/docker/import
+        target: /crafty/import
+    devices: []
+    cap_add: []
+    network_mode: bridge
+x-casaos:
+  author: Ren
+  category: Game
+  hostname: ""
+  icon: 
+  index: /
+  port_map: "8443"
+  scheme: https
+  store_app_id: craftycontrol
+  title:
+    custom: Crafty Control
