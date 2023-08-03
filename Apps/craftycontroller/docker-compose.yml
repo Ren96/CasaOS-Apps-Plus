@@ -59,12 +59,12 @@ x-casaos:
   port_map: "8443"
   scheme: https
 
-tips:
-  before_install:
-    en_us: |
-      | Username | Password |
-      |----------|----------|
-      | `admin`  | `crafty` |
+  tips:
+    before_install:
+      en_us: |
+        | Username | Password |
+        |----------|----------|
+        | `admin`  | `crafty` |
 
   title:
     en_us: Crafty Controller 
