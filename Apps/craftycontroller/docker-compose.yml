@@ -20,8 +20,8 @@ services:
       - target: 19132
         published: "19132"
         protocol: udp
-      - target: 25500-25600
-        published: "25500-25600"
+      - target: 25565
+        published: "25565"
         protocol: tcp
     privileged: false
     restart: unless-stopped
