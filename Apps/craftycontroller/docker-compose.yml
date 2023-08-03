@@ -1,7 +1,7 @@
 name: Crafty Controller
 services:
   crafty-controller:
-    container_name: craftycontroller 
+    container_name: crafty
     environment:
       - TZ=Etc/UTC
     image: registry.gitlab.com/crafty-controller/crafty-4:latest
@@ -50,7 +50,7 @@ x-casaos:
     - arm
     - arm64
   tagline:
-    en_us: Take Control Of Your Servers
+    en_us: Server Manager / Web Portal for your Minecraft server  
   description:
     en_us: Crafty Controller is a free and open-source Minecraft launcher and manager that allows users to start and administer Minecraft servers from a user-friendly interface. The interface is run as a self-hosted web server that is accessible to devices on the local network by default and can be port forwarded to provide external access outside of your local network. Crafty is designed to be easy to install and use, requiring only a bit of technical knowledge and a desire to learn to get started. Crafty Controller is still actively being developed by Arcadia Technology and we are continually making major improvements to the software. Crafty Controller is a feature rich panel that allows you to create and run servers, manage players, run commands, change server settings, view and edit server files, and make backups. With the help of Crafty Controller managing a large number of Minecraft servers on separate versions is easy and intuitive to do.
   project_url: https://gitlab.com/crafty-controller/crafty-4
@@ -58,5 +58,13 @@ x-casaos:
   icon: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/cbae4678f39d7e8e6af542fc7c37984fd2d4d773/Apps/craftycontrol/icon.png
   port_map: "8443"
   scheme: https
+
+tips:
+    before_install:
+      en_us: |
+        | Username | Password |
+        |----------|----------|
+        | `admin`  | `crafty` |
+
   title:
     en_us: Crafty Controller 
