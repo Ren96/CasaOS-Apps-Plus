@@ -56,6 +56,11 @@ x-casaos:
   project_url: https://gitlab.com/crafty-controller/crafty-4
   developer: Arcadia Technology
   icon: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/cbae4678f39d7e8e6af542fc7c37984fd2d4d773/Apps/craftycontrol/icon.png
+  screenshot_link:
+  - https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/craftycontroller/screenshot-1.png
+  - https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/craftycontroller/screenshot-2.png
+  - https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/craftycontroller/screenshot-3.png
+  thumbnail: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/craftycontroller/thumbnail.png
   port_map: "8443"
   scheme: https
 
