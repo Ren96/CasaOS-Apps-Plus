@@ -60,11 +60,11 @@ x-casaos:
   scheme: https
 
 tips:
-    before_install:
-      en_us: |
-        | Username | Password |
-        |----------|----------|
-        | `admin`  | `crafty` |
+  before_install:
+    en_us: |
+      | Username | Password |
+      |----------|----------|
+      | `admin`  | `crafty` |
 
   title:
     en_us: Crafty Controller 
