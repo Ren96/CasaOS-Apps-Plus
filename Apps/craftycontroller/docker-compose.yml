@@ -44,7 +44,11 @@ services:
     network_mode: bridge
 x-casaos:
   author: Ren
-  category: Apps+
+  category: Game
+  architectures:
+    - amd64
+    - arm
+    - arm64
   tagline:
     en_us: Take Control Of Your Servers
   description:
