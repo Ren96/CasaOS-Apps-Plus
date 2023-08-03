@@ -20,8 +20,8 @@ services:
       - target: 19132
         published: "19132"
         protocol: udp
-      - target: 25565
-        published: "25565"
+      - target: 25500-25600
+        published: "25500-25600"
         protocol: tcp
     privileged: false
     restart: unless-stopped
@@ -41,10 +41,10 @@ services:
       - type: bind
         source: /DATA/AppData/Crafty/docker/import
         target: /crafty/import
-    network_mode: bridge
+    network_mode: host
 x-casaos:
   author: Ren
-  category: Game
+  category: Games
   architectures:
     - amd64
     - arm
@@ -60,7 +60,7 @@ x-casaos:
   scheme: https
 
   tips:
-    before_install:
+    after_install:
       en_us: |
         | Username | Password |
         |----------|----------|
