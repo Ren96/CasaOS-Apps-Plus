@@ -44,7 +44,7 @@ x-casaos:
     en_us: Flame is self-hosted startpage for your server. Its design is inspired (heavily) by SUI. Flame is very easy to setup and use. With built-in editors, it allows you to setup your very own application hub in no time - no file editing necessary.
   project_url: https://github.com/pawelmalak/flame/
   developer: pawelmalak
-  icon: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/cbae4678f39d7e8e6af542fc7c37984fd2d4d773/Apps/craftycontrol/icon.png
+  icon: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/flame/icon.png
   screenshot_link:
   - https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/flame/screenshot-1.png
   - https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/flame/screenshot-2.png
