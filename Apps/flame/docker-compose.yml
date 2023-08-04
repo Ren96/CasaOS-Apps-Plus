@@ -1,0 +1,66 @@
+name: Flame
+services:
+  crafty-controller:
+    container_name: flame
+
+    environment:
+      - TZ=Etc/UTC
+      - PASSWORD=casa
+    image: pawelmalak/flame
+
+    labels:
+      icon: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/cbae4678f39d7e8e6af542fc7c37984fd2d4d773/Apps/flame/icon.png
+
+    ports:
+      - target: 5005
+        published: "5005"
+        protocol: tcp
+
+    privileged: false
+    restart: unless-stopped
+
+    volumes:
+
+      - type: bind
+        source: /DATA/AppData/Flame/data
+        target: /app/data
+
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+
+    network_mode: host
+
+x-casaos:
+  author: Ren
+  category: Dashboard
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  tagline:
+    en_us: Flame is self-hosted startpage for your server with built-in apps and bookmarks editors. 
+  description:
+    en_us: Flame is self-hosted startpage for your server. Its design is inspired (heavily) by SUI. Flame is very easy to setup and use. With built-in editors, it allows you to setup your very own application hub in no time - no file editing necessary.
+  project_url: https://gitlab.com/crafty-controller/crafty-4
+  developer: Arcadia Technology
+  icon: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/cbae4678f39d7e8e6af542fc7c37984fd2d4d773/Apps/craftycontrol/icon.png
+  screenshot_link:
+  - https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/flame/screenshot-1.png
+  - https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/flame/screenshot-2.png
+  - https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/flame/screenshot-3.png
+
+  thumbnail: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/flame/thumbnail.png
+
+  port_map: "5005"
+  scheme: http
+
+  tips:
+    before_install:
+      en_us: |
+        | Password |
+        |----------|
+        | `casa` |
+
+  title:
+    en_us: Flame
