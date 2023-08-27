@@ -41,7 +41,7 @@ services:
       - type: bind
         source: /DATA/AppData/Crafty/docker/import
         target: /crafty/import
-    network_mode: host
+    network_mode: bridge
 x-casaos:
   author: Ren
   category: Games
