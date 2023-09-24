@@ -23,8 +23,8 @@ services:
         target: /usr/local/apache2/htdocs/
 
       - type: bind
-        source: /DATA/AppData/apache/conf/httpd.conf
-        target: /usr/local/apache2/conf/httpd.conf
+        source: /DATA/AppData/apache/conf/
+        target: /usr/local/apache2/conf/
 
 
     network_mode: bridge
@@ -61,6 +61,7 @@ x-casaos:
         | Run this command after install |
         |--------------------------------|
         | sudo docker run --rm httpd:2.4 cat /usr/local/apache2/conf/httpd.conf > httpd.conf & sudo mv httpd.conf /DATA/AppData/apache/conf/ |
+        | Then restart the container |
 
   title:
     en_us: Apache
