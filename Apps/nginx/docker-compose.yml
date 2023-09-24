@@ -1,0 +1,64 @@
+name: Nginx
+services:
+  httpd:
+    container_name: nginx
+
+    image: nginx
+
+    labels:
+      icon: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/nginx/icon.png
+
+    ports:
+      - target: 80
+        published: 8080
+        protocol: tcp
+      - target: 443
+        published: 8443
+        protocol: tcp
+
+    privileged: false
+    restart: unless-stopped
+
+    volumes:
+      - type: bind
+        source: /DATA/AppData/nginx/config
+        target: /config
+
+
+    network_mode: bridge
+
+x-casaos:
+  author: Ren
+  category: Webhosting
+  architectures:
+    - amd64
+    - arm
+    - arm64
+    - arm32v5
+    - arm32v6
+    - arm32v7
+    - arm32v8
+    - i386
+    - mips64le
+    - s390x
+    - ppc64le
+  tagline:
+    en_us: 
+  description:
+    en_us: 
+  project_url: 
+  developer: 
+  icon: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/nginx/icon.png
+  screenshot_link:
+
+  port_map: "8080"
+  
+  scheme: http
+
+  # tips:
+  #   before_install:
+  #     en_us: |
+  #       |  |
+
+  title:
+    en_us: Nginx
