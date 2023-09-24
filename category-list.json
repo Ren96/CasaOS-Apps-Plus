@@ -3,5 +3,10 @@
       "name": "Dashboard",
       "font": "penguin",
       "description": ""
+    },
+    {
+      "name": "Webhosting",
+      "font": "penguin",
+      "description": ""
     }
 ]
