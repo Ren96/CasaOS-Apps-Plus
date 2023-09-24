@@ -1,19 +1,16 @@
-name: Flame
+name: Apache
 services:
-  flame:
-    container_name: flame
+  httpd:
+    container_name: apache
 
-    environment:
-      - TZ=Etc/UTC
-      - PASSWORD=casa
-    image: pawelmalak/flame
+    image: httpd:latest
 
     labels:
-      icon: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/flame/icon.png
+      icon: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/apache/icon.png
 
     ports:
-      - target: 5005
-        published: "5005"
+      - target: 80
+        published: "8080"
         protocol: tcp
 
     privileged: false
@@ -22,18 +19,15 @@ services:
     volumes:
 
       - type: bind
-        source: /DATA/AppData/Flame/data
-        target: /app/data
+        source: /DATA/AppData/apache
+        target: /app
 
-      - type: bind
-        source: /var/run/docker.sock
-        target: /var/run/docker.sock
 
     network_mode: bridge
 
 x-casaos:
   author: Ren
-  category: Dashboard
+  category: Webhosting
   architectures:
     - amd64
     - arm
@@ -54,15 +48,8 @@ x-casaos:
 
   thumbnail: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/flame/thumbnail.png
 
-  port_map: "5005"
+  port_map: "8080"
   scheme: http
 
-  tips:
-    before_install:
-      en_us: |
-        | Password |
-        |----------|
-        | `casa` |
-
   title:
-    en_us: Flame
+    en_us: Apache
