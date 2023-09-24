@@ -3,7 +3,7 @@ services:
   httpd:
     container_name: apache
 
-    image: httpd:latest
+    image: httpd:2.4
 
     labels:
       icon: https://raw.githubusercontent.com/Ren96/CasaOS-Apps-Plus/main/Apps/apache/icon.png
@@ -19,8 +19,12 @@ services:
     volumes:
 
       - type: bind
-        source: /DATA/AppData/apache
-        target: /app
+        source: /DATA/AppData/apache/htdocs/
+        target: /usr/local/apache2/htdocs/
+
+      - type: bind
+        source: /DATA/AppData/apache/conf/httpd.conf
+        target: /usr/local/apache2/conf/httpd.conf
 
 
     network_mode: bridge
@@ -50,6 +54,13 @@ x-casaos:
 
   port_map: "8080"
   scheme: http
+
+  tips:
+    before_install:
+      en_us: |
+        | Run this command after install |
+        |--------------------------------|
+        | sudo docker run --rm httpd:2.4 cat /usr/local/apache2/conf/httpd.conf > httpd.conf & sudo mv httpd.conf /DATA/AppData/apache/conf/ |
 
   title:
     en_us: Apache
