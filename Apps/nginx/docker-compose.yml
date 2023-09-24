@@ -25,7 +25,7 @@ services:
         published: 8080
         protocol: tcp
       - target: 443
-        published: 0443
+        published: 8443
         protocol: tcp
     volumes:
       - type: bind
@@ -51,6 +51,6 @@ x-casaos:
   port_map: "8080"
 
   scheme: http
-  
+
   title:
     en_us: Nginx
